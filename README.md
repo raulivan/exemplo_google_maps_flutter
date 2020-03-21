@@ -1,6 +1,6 @@
-# exemplo_google_maps
+# Exemplo Google Maps
 
-A new Flutter project.
+Exemplo de uso do Google Maps com o Flutter
 
 ## Getting Started
 
