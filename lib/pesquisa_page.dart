@@ -57,8 +57,8 @@ class _PesquisaPageState extends State<PesquisaPage> {
     );
   }
 
-
-void pesquisar(double latitude, double longitude) async {
+  void pesquisar(double latitude, double longitude) async {
+    /*
   var _API_KEY = 'AIzaSyC8K61M168zrcw3wpJ-dWEpkSt8tcJ_sz0';
 
   setState(() {
@@ -79,7 +79,6 @@ void pesquisar(double latitude, double longitude) async {
   }
   setState(() {
     searching = false; // 6
-  });
-}
-
+  });*/
+  }
 }

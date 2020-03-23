@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
 
     _pontosNoMapa.add(Marker(
       markerId: MarkerId('MinhaCasa'),
+      infoWindow:  InfoWindow(title: 'Minha Casa',snippet: 'Descrição'),
       draggable: false,
       onTap: () {
         print('Clicou no Ponto Minha Casa');
@@ -35,6 +36,7 @@ class _HomePageState extends State<HomePage> {
 
     _pontosNoMapa.add(Marker(
       markerId: MarkerId('Cefet'),
+      infoWindow:  InfoWindow(title: 'Cefet',snippet: 'Descrição'),
       draggable: false,
       onTap: () {
         print('Clicou no Ponto Cefet');

@@ -1,3 +1,4 @@
+import 'package:exemplo_google_maps/rota_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
        
         primarySwatch: Colors.blue,
       ),
-      home: PesquisaPage(),
+      home: RotaPage(),
     );
   }
 }
