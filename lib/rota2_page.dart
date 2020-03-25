@@ -1,3 +1,4 @@
+//ESSE CÓDIGO ESTA COM PROBLEMAS, NÃO ESTA FUNCIONANDO CORRETAMENTE
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class _RotaPage2State extends State<RotaPage2> {
   Set<Polyline> polyline = {};
   List<LatLng> rotas = [];
   GoogleMapPolyline googleMapPolyline =
-      new GoogleMapPolyline(apiKey: 'AIzaSyC8K61M168zrcw3wpJ-dWEpkSt8tcJ_sz0');
+      new GoogleMapPolyline(apiKey: 'COLOCA AQUI SUA API');
 
   void _montaRota() async {
     var permissao =
@@ -38,10 +39,10 @@ class _RotaPage2State extends State<RotaPage2> {
     }
   }
 
-  void _montaPontosNoMapa(){
+  void _montaPontosNoMapa() {
     _pontosNoMapa.add(Marker(
       markerId: MarkerId('MinhaCasa'),
-      infoWindow:  InfoWindow(title: 'Minha Casa',snippet: 'Descrição'),
+      infoWindow: InfoWindow(title: 'Minha Casa', snippet: 'Descrição'),
       draggable: false,
       onTap: () {
         print('Clicou no Ponto Minha Casa');
@@ -51,7 +52,7 @@ class _RotaPage2State extends State<RotaPage2> {
 
     _pontosNoMapa.add(Marker(
       markerId: MarkerId('Cefet'),
-      infoWindow:  InfoWindow(title: 'Cefet',snippet: 'Descrição'),
+      infoWindow: InfoWindow(title: 'Cefet', snippet: 'Descrição'),
       draggable: false,
       onTap: () {
         print('Clicou no Ponto Cefet');
@@ -59,6 +60,7 @@ class _RotaPage2State extends State<RotaPage2> {
       position: LatLng(-20.171170, -44.909911),
     ));
   }
+
   void getRotaComEndereco() async {
     var enderecos = await googleMapPolyline.getPolylineCoordinatesWithAddress(
         origin: 'Rua Antonina Maria Pereira, 171, Davanuze',

@@ -15,49 +15,48 @@ const LatLng DEST_LOCATION = LatLng(-20.171170, -44.909911);
 
 class _RotaPageState extends State<RotaPage> {
   Completer<GoogleMapController> _controller = Completer();
-// this set will hold my markers
+
   Set<Marker> _markers = {};
-// this will hold the generated polylines
   Set<Polyline> _polylines = {};
-// this will hold each polyline coordinate as Lat and Lng pairs
   List<LatLng> polylineCoordinates = [];
-// this is the key object - the PolylinePoints
-// which generates every polyline between start and finish
   PolylinePoints polylinePoints = PolylinePoints();
-  String googleAPIKey = 'AIzaSyC8K61M168zrcw3wpJ-dWEpkSt8tcJ_sz0';
+  String googleAPIKey = '[COLOCA AQUI SUA KEY API]';
 
- 
-
-// for my custom icons
   BitmapDescriptor sourceIcon;
   BitmapDescriptor destinationIcon;
 
-  //Foco inicial do mapa
   static const LatLng _divinopolis = const LatLng(-20.1394, -44.8872);
 
   void _permissao() async {
+    //Solicita ao usuário a permissão de usar o GPS
+    //caso não esteja liberada
      var permissao =
         await Permission.getPermissionsStatus([PermissionName.Location]);
 
     if (permissao[0].permissionStatus == PermissionStatus.notAgain) 
       await Permission.requestPermissions([PermissionName.Location]);
   }
+
   void _onMapCreated(GoogleMapController controller) {
+    //Solicita a permissão
     _permissao();
+    //inicializar o controladort
     _controller.complete(controller);
+    //cria as marcações
     setMapPins();
+    //traça a linhas da rota
     setPolylines();
   }
 
   void setMapPins() {
    setState(() {
-      // Origem
+      // Ponto de Origem
       _markers.add(Marker(
          markerId: MarkerId('CASA'),
          position: SOURCE_LOCATION,
          //icon: sourceIcon
       ));
-      // destino
+      // Ponto de destino
       _markers.add(Marker(
          markerId: MarkerId('CEFET'),
          position: DEST_LOCATION,

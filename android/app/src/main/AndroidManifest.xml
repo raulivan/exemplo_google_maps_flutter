@@ -12,7 +12,10 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="exemplo_google_maps"
         android:icon="@mipmap/ic_launcher">
-         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyC8K61M168zrcw3wpJ-dWEpkSt8tcJ_sz0"/>
+        
+        <meta-data android:name="com.google.android.geo.API_KEY" 
+         android:value="COLOCA AQUI SUA API"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
